@@ -66,9 +66,6 @@ inputUser.addEventListener('change', ()=>{
         btnReadVoice.addEventListener('click', ()=>{
             resultBox[0].innerHTML = `<h1>${manisa.getSoratra()} => feo</h1>`
         })
-
-        manisa.isaFeo()
-        manisa.dikateny()
     }
     else{
         return;
