@@ -1,3 +1,4 @@
+// data
 const ISA = [
     "ray",
     "roa",
@@ -9,6 +10,9 @@ const ISA = [
     "valo",
     "sivy"
 ]
+
+
+// object
 class Manisa{
     constructor(){
         this.isa = 0;
@@ -26,6 +30,10 @@ class Manisa{
         return this.isaSoratra;
     }
 
+    getSoratra(){
+        return this.isaSoratra;
+    }
+
     isaFeo(){
         console.log(`feo : ${this.isaSoratra}`);
     }
@@ -36,9 +44,39 @@ class Manisa{
 
 }
 
+// ui /ux
+const inputUser     = document.getElementById('inputUser');
+const result        = document.getElementById('result');
+const btnTranslate  = document.getElementById('btnTranslate');
+const btnReadVoice  = document.getElementById('btnReadVoice');
+const resultBox     = document.getElementsByClassName('resultBox')
 
-let manisa = new Manisa();
+ 
 
-console.log(manisa.manisa(8));
-manisa.isaFeo()
-manisa.dikateny()
+
+inputUser.addEventListener('change', ()=>{
+    if(inputUser.value >=0){
+        let manisa = new Manisa();
+        result.innerHTML = manisa.manisa(inputUser.value);
+
+        btnTranslate.addEventListener('click', ()=>{
+            resultBox[0].innerHTML = `<h1>${manisa.getSoratra()} => translation</h1>`
+        })
+
+        btnReadVoice.addEventListener('click', ()=>{
+            resultBox[0].innerHTML = `<h1>${manisa.getSoratra()} => feo</h1>`
+        })
+
+        manisa.isaFeo()
+        manisa.dikateny()
+    }
+    else{
+        return;
+    }
+    
+} )
+
+// main 
+
+
+
