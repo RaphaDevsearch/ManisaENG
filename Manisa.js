@@ -1,3 +1,14 @@
+const ISA = [
+    "ray",
+    "roa",
+    "telo",
+    "efatra",
+    "dimy",
+    "enina",
+    "foto",
+    "valo",
+    "sivy"
+]
 class Manisa{
     constructor(){
         this.isa = 0;
@@ -6,6 +17,12 @@ class Manisa{
 
     manisa(isa){
         this.isa = isa;
+        if(this.isa <10){
+            this.isaSoratra = ISA[isa - 1];
+        }
+        else{
+            this.isaSoratra = "miandrasa ny fivoana manaraka ...";
+        }
         return this.isaSoratra;
     }
 
@@ -18,3 +35,10 @@ class Manisa{
     }
 
 }
+
+
+let manisa = new Manisa();
+
+console.log(manisa.manisa(8));
+manisa.isaFeo()
+manisa.dikateny()
