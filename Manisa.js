@@ -21,7 +21,7 @@ class Manisa{
 
     manisa(isa){
         this.isa = isa;
-        if(this.isa <10){
+        if(isa > 0 &&isa <10){
             this.isaSoratra = ISA[isa - 1];
         }
         else{
@@ -60,11 +60,11 @@ inputUser.addEventListener('change', ()=>{
         result.innerHTML = manisa.manisa(inputUser.value);
 
         btnTranslate.addEventListener('click', ()=>{
-            resultBox[0].innerHTML = `<h1>${manisa.getSoratra()} => translation</h1>`
+            alert(`translate : ${manisa.getSoratra()}`)
         })
 
         btnReadVoice.addEventListener('click', ()=>{
-            resultBox[0].innerHTML = `<h1>${manisa.getSoratra()} => feo</h1>`
+            alert(`voice : ${manisa.getSoratra()}`)
         })
     }
     else{
@@ -74,6 +74,3 @@ inputUser.addEventListener('change', ()=>{
 } )
 
 // main 
-
-
-
